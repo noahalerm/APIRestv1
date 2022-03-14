@@ -42,11 +42,11 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
         auth.userDetailsService(myUserDetailsService).passwordEncoder(encoder);
     }
 
-//    @Override
-//    protected void configure(HttpSecurity http) throws Exception {
-//        http.cors()
-//                .and()
-//                .httpBasic()
+    @Override
+    protected void configure(HttpSecurity http) throws Exception {
+        http.cors()
+                .and()
+                .httpBasic()
 //                .authenticationEntryPoint(myEntryPoint)
 //                .and()
 //                .authorizeRequests()
@@ -56,8 +56,8 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
 //                .antMatchers(HttpMethod.PUT, "/series/**").hasRole("USER")
 //                .antMatchers(HttpMethod.DELETE, "/series/**").hasRole("ADMIN")
 //                .antMatchers(HttpMethod.POST, "/series/**").hasAnyRole("USER", "ADMIN")
-//                .anyRequest().authenticated();
-//                //.and()
-//                //.csrf().disable();
-//    }
+//                .anyRequest().authenticated()
+                .and()
+                .csrf().disable();
+    }
 }
