@@ -47,16 +47,16 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
         http.cors()
                 .and()
                 .httpBasic()
-//                .authenticationEntryPoint(myEntryPoint)
-//                .and()
-//                .authorizeRequests()
-//                .antMatchers(HttpMethod.GET, "/me/**").hasRole("ADMIN") //FORBIDDEN TEST
-//                .antMatchers(HttpMethod.GET, "/users/**", "/series/**").hasRole("USER")
-//                .antMatchers(HttpMethod.POST, "/users/**", "/series/**").hasRole("USER")
-//                .antMatchers(HttpMethod.PUT, "/series/**").hasRole("USER")
-//                .antMatchers(HttpMethod.DELETE, "/series/**").hasRole("ADMIN")
-//                .antMatchers(HttpMethod.POST, "/series/**").hasAnyRole("USER", "ADMIN")
-//                .anyRequest().authenticated()
+                .authenticationEntryPoint(myEntryPoint)
+                .and()
+                .authorizeRequests()
+                .antMatchers(HttpMethod.GET, "/me/**").hasRole("ADMIN") //FORBIDDEN TEST
+                .antMatchers(HttpMethod.GET, "/users/**", "/series/**").hasRole("USER")
+                .antMatchers(HttpMethod.POST, "/users/**", "/series/**").hasRole("USER")
+                .antMatchers(HttpMethod.PUT, "/series/**").hasRole("USER")
+                .antMatchers(HttpMethod.DELETE, "/series/**").hasRole("ADMIN")
+                .antMatchers(HttpMethod.POST, "/series/**").hasAnyRole("USER", "ADMIN")
+                .anyRequest().authenticated()
                 .and()
                 .csrf().disable();
     }
