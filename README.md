@@ -14,3 +14,6 @@ This web contains users and series.
 - **POST** 🠊 "/series"
 - **PUT** 🠊 "/series"
 - **DELETE** 🠊 "/series/{id}"
+
+## User examples
+Noah - 1234
